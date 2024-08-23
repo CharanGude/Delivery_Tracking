@@ -5,7 +5,7 @@ import { FaPhoneAlt } from 'react-icons/fa';
 
 const TrackingPage = () => {
   const [orderStatus, setOrderStatus] = useState('preparing'); // 'preparing', 'assigned', 'inTransit', 'arrived'
-  const [directions, setDirections] = useState(null);
+  // const [directions, setDirections] = useState(null);
   const [icons, setIcons] = useState({});
 
   const mapStyles = {
@@ -126,7 +126,7 @@ const TrackingPage = () => {
         setOrderStatus('assigned');
         setTimeout(() => {
           setOrderStatus('inTransit');
-          const directionsService = new window.google.maps.DirectionsService();
+          //const directionsService = new window.google.maps.DirectionsService();
           /*directionsService.route(
             {
               origin: deliveryPartnerLocation,
@@ -191,9 +191,9 @@ const TrackingPage = () => {
                 icon={icons.bikeIcon} 
               />
             )}
-            {orderStatus === 'inTransit' && directions && (
+            {/*orderStatus === 'inTransit' && directions && (
               <DirectionsRenderer directions={directions} />
-            )}
+            )*/}
           </GoogleMap>
         </LoadScript>
       </section>
