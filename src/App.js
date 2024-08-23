@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import TrackingPage from './components/TrackingPage'
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+
+  const [ordered, setOrdered] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{'max-width': '480px', 'margin':'auto'}}>
+      {ordered?
+      <>
+        <TrackingPage />
+      </>
+      :
+      <>
+        <div className='container'>
+          <h1>Deliveryan</h1>
+          <h2>"You're just a step away from deliciousness! Ready to place your order and track it to your door?"</h2>
+          <button onClick={() => setOrdered(true)} className='order-btn'>Place Your Order</button>
+        </div>
+      </>}
+      
     </div>
   );
 }

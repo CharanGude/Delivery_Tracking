@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .map-container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .details-container {
+    width: 100%;
+    text-align: left;
+  }
+  
+  .delivery-partner-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .partner-image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .partner-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .contact-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .phone-icon {
+    color: orangered;
+    margin-right: 10px;
+    height: 30px;
+  }
+  
+  .contact-info p {
+    margin: 0;
+  }
+  
+  .delivery-partner-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
