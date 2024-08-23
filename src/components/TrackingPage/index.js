@@ -127,7 +127,7 @@ const TrackingPage = () => {
         setTimeout(() => {
           setOrderStatus('inTransit');
           const directionsService = new window.google.maps.DirectionsService();
-          directionsService.route(
+          /*directionsService.route(
             {
               origin: deliveryPartnerLocation,
               destination: currentLocation,
@@ -142,7 +142,7 @@ const TrackingPage = () => {
                 console.error('Result object:', result);
               }
             }
-          );
+          );*/
           
           setTimeout(() => {
             setOrderStatus('arrived');
