@@ -152,7 +152,7 @@ const TrackingPage = () => {
     };
 
     simulateSteps();
-  }, []);
+  }, [currentLocation, deliveryPartnerLocation]);
 
   return (
     <div className="container">
