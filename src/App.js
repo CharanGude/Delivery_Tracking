@@ -16,7 +16,7 @@ function App() {
       </>
       :
       <>
-        <div className='container'>
+        <div className='app-container'>
           <h1>Deliveryan</h1>
           <div>
             <Lottie className='order-icon' animationData={Order} />
