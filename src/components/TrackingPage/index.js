@@ -221,7 +221,7 @@ const TrackingPage = () => {
         
         {orderStatus !== 'preparing' && (
           <div className='delivery-partner-container'>
-            <h4>Your Delivery Partner is:</h4>
+            <h2>Your Delivery Partner is:</h2>
             <div className="delivery-partner-info">
               <img 
                 src="https://via.placeholder.com/50"  // Placeholder image
