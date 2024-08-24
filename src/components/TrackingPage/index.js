@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import { FaPhoneAlt } from 'react-icons/fa';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import Preparing from './preparing.json'
+import Ontheway from './ontheway.json'
+import Reached from './reached.json'
+import Lottie from 'lottie-react';
 
 const TrackingPage = () => {
   const [orderStatus, setOrderStatus] = useState('preparing'); // 'preparing', 'assigned', 'inTransit', 'arrived'
@@ -159,14 +164,28 @@ const TrackingPage = () => {
       <header className="header">
         <h1>Deliveryan</h1>
       </header>
-      <div>
-      <h2>Order Status</h2>
-        <p>
+      <div className='status-container'>
+        <h2 style={{'margin': '0px'}}>Order Status:</h2>
+        <TransitionGroup className="icon-container">
+          <CSSTransition
+            key={orderStatus}
+            timeout={500}  // Duration of the animation
+            classNames="slide-fade"  // Name of the transition classes
+          >
+            <>
+              {orderStatus === 'preparing' && <Lottie className='icon-style' animationData={Preparing} />}
+              {orderStatus === 'assigned' && <Lottie className='icon-style' animationData={Preparing} />}
+              {orderStatus === 'inTransit' && <Lottie className='icon-style' animationData={Ontheway} />}
+              {orderStatus === 'arrived' && <Lottie className='icon-style' animationData={Reached} />}
+            </>
+          </CSSTransition>
+        </TransitionGroup>
+        <h3>
           {orderStatus === 'preparing' && 'Your order is being prepared by the restaurant.'}
           {orderStatus === 'assigned' && 'A delivery partner has been assigned. Waiting for pickup.'}
           {orderStatus === 'inTransit' && 'Your order is on the way!'}
           {orderStatus === 'arrived' && 'Your delivery partner has arrived at your location!'}
-        </p> 
+        </h3> 
       </div>
 
       <section className="map-container">
